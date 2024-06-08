@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時尚選擇</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>時尚選擇</h1>
+    <div id="products">
+        <!-- 商品將由JavaScript載入 -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
