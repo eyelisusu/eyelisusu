@@ -1,0 +1,24 @@
+<?php
+header('Content-Type: application/json');
+
+require 'db_config.php';
+
+$sql = "SELECT name, description, features FROM products";
+$result = $conn->query($sql);
+
+$products = array();
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $products[] = array(
+            "name" => $row["name"],
+            "description" => $row["description"],
+            "features" => explode(',', $row["features"])
+        );
+    }
+}
+
+echo json_encode($products);
+
+$conn->close();
+?>
