@@ -1,0 +1,5 @@
+INSERT INTO products (name, description, features) VALUES
+('CLASSIC MINI CUBAN CHAIN', 'Uk-based Hatton Labs crafts custom jewelry...', 'Solid 925 Sterling Silver,Brand Charm,Secure Lobster Clasp,Anti-Tarnish Coating,Made in Italy'),
+('CLASSIC PEARL CHAIN', 'Since 2019 Hatton Labs has been providing...', 'Freshwater Pearls & Sterling Silver Construction,Clasp Closure,Anti-Tarnish Coating,Made in Italy'),
+('CLASSIC GOLDEN CHAIN', 'Hatton Labs creates luxurious and elegant...', '18K Gold,Brand Charm,Secure Lobster Clasp,Anti-Tarnish Coating,Made in Italy'),
+('CLASSIC DIAMOND CHAIN', 'Hatton Labs offers premium jewelry with...', 'Diamond & Sterling Silver Construction,Clasp Closure,Anti-Tarnish Coating,Made in Italy');
