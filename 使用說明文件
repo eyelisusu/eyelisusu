@@ -1,0 +1,106 @@
+### 安裝和運行系統的說明
+
+以下是詳細的安裝和運行這個網站系統的步驟：
+
+### 步驟 1: 安裝開發環境
+
+首先，確保你的電腦已安裝以下軟體：
+
+- **Web Server**: 如 Apache 或 Nginx（建議使用 XAMPP 或 WAMP 這樣的集成環境）
+- **PHP**: 版本7.4或更高
+- **MySQL**: 用於資料庫管理
+
+### 步驟 2: 配置資料庫
+
+1. 打開你的資料庫管理工具（如 phpMyAdmin）並創建一個新的資料庫，名為 `fashion_selection`。
+2. 使用以下 SQL 語句創建 `products` 表並插入範例數據：
+
+```sql
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    features TEXT NOT NULL
+);
+
+INSERT INTO products (name, description, features) VALUES
+('CLASSIC MINI CUBAN CHAIN', 'Uk-based Hatton Labs crafts custom jewelry...', 'Solid 925 Sterling Silver,Brand Charm,Secure Lobster Clasp,Anti-Tarnish Coating,Made in Italy'),
+('CLASSIC PEARL CHAIN', 'Since 2019 Hatton Labs has been providing...', 'Freshwater Pearls & Sterling Silver Construction,Clasp Closure,Anti-Tarnish Coating,Made in Italy'),
+('CLASSIC GOLDEN CHAIN', 'Hatton Labs creates luxurious and elegant...', '18K Gold,Brand Charm,Secure Lobster Clasp,Anti-Tarnish Coating,Made in Italy'),
+('CLASSIC DIAMOND CHAIN', 'Hatton Labs offers premium jewelry with...', 'Diamond & Sterling Silver Construction,Clasp Closure,Anti-Tarnish Coating,Made in Italy');
+```
+
+### 步驟 3: 配置文件結構
+
+將之前的代碼文件保存在你的伺服器根目錄下，文件結構如下：
+
+```
+/var/www/html/ (如果使用Apache)
+    ├── index.html
+    ├── styles.css
+    ├── script.js
+    ├── get_products.php
+    └── db_config.php
+```
+
+### 步驟 4: 配置資料庫連接
+
+在 `db_config.php` 中配置資料庫連接：
+
+```php
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "fashion_selection";
+
+// 建立連接
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// 檢查連接
+if ($conn->connect_error) {
+    die("連接失敗: " . $conn->connect_error);
+}
+?>
+```
+
+### 步驟 5: 啟動伺服器
+
+如果你使用 XAMPP 或 WAMP：
+1. 啟動 Apache 和 MySQL 服務。
+2. 將你的項目文件複製到 `htdocs` 目錄下（對於 XAMPP）或 `www` 目錄下（對於 WAMP）。
+
+### 步驟 6: 訪問網站
+
+在瀏覽器中輸入 `http://localhost` 即可訪問你的网站。
+
+以下是每個步驟的詳細說明：
+
+#### 1. 下載並安裝 XAMPP（或 WAMP）
+
+- [XAMPP 下載地址](https://www.apachefriends.org/index.html)
+- [WAMP 下載地址](http://www.wampserver.com/)
+
+按照提示完成安裝。
+
+#### 2. 啟動 XAMPP（或 WAMP）
+
+打開 XAMPP 控制面板，啟動 Apache 和 MySQL 服務。
+
+#### 3. 將文件複製到伺服器目錄
+
+將你的項目文件（`index.html`、`styles.css`、`script.js`、`get_products.php`、`db_config.php`）複製到 `C:\xampp\htdocs\your_project_name\` 目錄（對於 XAMPP）或 `C:\wamp\www\your_project_name\` 目錄（對於 WAMP）。
+
+#### 4. 配置資料庫
+
+打開瀏覽器，訪問 `http://localhost/phpmyadmin`，創建一個名為 `fashion_selection` 的資料庫並運行上述 SQL 語句創建表和插入數據。
+
+#### 5. 配置資料庫連接
+
+確保 `db_config.php` 中的資料庫連接資訊正確。
+
+#### 6. 訪問網站
+
+在瀏覽器中輸入 `http://localhost/your_project_name` 即可訪問你的网站。
+
+這樣你就可以打開並運行這個網站了。如果有任何問題，請檢查每一步驟是否正確執行。
