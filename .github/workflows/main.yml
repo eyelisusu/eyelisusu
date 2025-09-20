@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>本地多人小遊戲平台（WebRTC 無伺服器版）</title>
+<style>
+  :root{--bg:#0b0b10;--panel:#171720;--txt:#eaeaf2;--muted:#b8b8c9;--ok:#16a34a;--warn:#d97706;--err:#ef4444;--brand:#8b5cf6}
+  *{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#0b0b10,#12121a);color:var(--txt);
+  font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px}
+  .card{display:grid;grid-template-columns:320px minmax(0,1fr);gap:14px;max-width:1200px;width:100%}
+  .panel{background:#171720;border:1px solid #252536;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.4);padding:14px}
+  h1{margin:0 0 8px;font-size:20px;font-weight:800;letter-spacing:.2px}
+  .small{font-size:12px}.muted{color:var(--muted)}
+  .btn{background:#232333;border:1px solid #2f2f45;color:var(--txt);padding:9px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+  .btn:hover{filter:brightness(1.12)} .btn[disabled]{opacity:.6;cursor:not-allowed}
+  .brand{background:#2a2540;border-color:#3b2ea3}
+  textarea,input{width:100%;background:#0f0f16;color:var(--txt);border:1px solid #26263a;border-radius:12px;padding:10px}
+  textarea{min-height:100px;resize:vertical}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}
+  .status{font-size:12px;padding:6px 10px;border-radius:999px}
+  .ok{background:rgba(22,163,74,.15);border:1px solid rgba(22,163,74,.4)}
+  .warn{background:rgba(217,119,6,.15);border:1px solid rgba(217,119,6,.4)}
+  .err{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4)}
+  .tab{padding:8px 10px;border-radius:10px;border:1px solid #2a2a3a;background:#20202c;cursor:pointer}
+  .tab.active{background:#2b2b3a;border-color:#3a3a52}
+  /* Game area */
+  .gamewrap{background:#0f0f16;border:1px solid #26263a;border-radius:16px;min-height:480px;padding:12px}
+  .tboard{display:grid;grid-template-columns:repeat(3,120px);grid-template-rows:repeat(3,120px);gap:8px;justify-content:center;margin-top:12px}
+  .cell{display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:900;cursor:pointer;background:#171728;border:1px solid #2a2a3a;border-radius:
